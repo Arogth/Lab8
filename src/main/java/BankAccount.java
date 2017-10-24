@@ -27,12 +27,36 @@ public class BankAccount {
     private double interestEarned;
 
     public BankAccount(final String name, final BankAccountType accountCategory) {
-        /*
-         * Implement this function
-         */
+
+        ownerName = name;
+        accountType = accountCategory;
+
+        accountNumber = Bank.totalAccounts;
+        Bank.totalAccounts++;
     }
 
-    /*
-     * Implement getters and setters as appropriate for private variables.
-     */
+    public int getAccountNumber()
+    {
+        return accountNumber;
+    }
+
+    public double getAccountBalance()
+    {
+        return accountBalance;
+    }
+
+    public String getAccountOwnerName()
+    {
+        return ownerName;
+    }
+
+    public void changeAccountBalance(double change)
+    {
+        accountBalance += change;
+    }
+
+    public void setAccountOwnerName(String newOwner)
+    {
+        ownerName = newOwner;
+    }
 }
